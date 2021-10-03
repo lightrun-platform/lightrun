@@ -1,0 +1,13 @@
+{
+    "registration": {
+        "displayName": "Python Sample App",
+        "tags": [
+            {
+                "name": "Production"
+            },
+            {
+                "name": "Main"
+            }
+        ]
+    }
+}

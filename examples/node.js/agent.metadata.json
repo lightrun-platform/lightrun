@@ -1,0 +1,13 @@
+{
+    "registration": {
+        "displayName": "Node.js Sample App",
+        "tags": [
+            {
+                "name": "Production"
+            },
+            {
+                "name": "Main"
+            }
+        ]
+    }
+}
