@@ -1,7 +1,10 @@
+LIGHTRUN_KEY = 'LIGHTRUN_KEY'
+LIGHTRUN_SERVER = 'LIGHTRUN_KEY'
+
 def import_lightrun():
     try:
         import lightrun
-        lightrun.enable(com_lightrun_server='https://app.lightrun.com/company/success', company_key='b33aaabc-2ef0-4bcd-9c09-e3de48ac90fe')
+        lightrun.enable(com_lightrun_server=LIGHTRUN_SERVER, company_key=LIGHTRUN_KEY)
     except ImportError as e:
         print("Error importing Lightrun: ", e)
 
