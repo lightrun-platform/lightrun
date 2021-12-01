@@ -18,4 +18,4 @@ def main(event, context):
     num = event['num']
 
     print("Calculating Fibonacci of {}...".format(num))
-    start_fibonacci(num)
+    return start_fibonacci(num)
