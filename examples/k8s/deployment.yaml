@@ -1,0 +1,53 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: app-secret
+stringData:
+  lightrun_key: <LIGHTRUN_KEY>
+  lightrun_company: <LIGHTRUN_COMPANY>
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app
+  labels:
+    app: app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app
+  template:
+    metadata:
+      labels:
+        app: app
+    spec:
+      initContainers:
+      - name: lightrun-installer
+        image: curlimages/curl
+        env:
+        - name: LIGHTRUN_KEY
+          valueFrom:
+            secretKeyRef:
+              name: app-secret
+              key: lightrun_key
+        - name: LIGHTRUN_COMPANY
+          valueFrom:
+            secretKeyRef:
+              name: app-secret
+              key: lightrun_company
+        command: ["/bin/sh", "-c"]
+        args: ["curl -o /tmp/deployment.sh -L https://app.lightrun.com/download/company/$LIGHTRUN_COMPANY/install-agent.sh?platform=linux; cd /tmp; sh /tmp/deployment.sh"]
+        volumeMounts:
+        - name: init-script
+          mountPath: /tmp/
+      containers:
+      - name: app
+        image: <your repo>/primeapp-java:0.1
+        args: ["-agentpath:/lightrun/agent/lightrun_agent.so", "/app/PrimeMain.jar"]
+        volumeMounts:
+        - name: init-script
+          mountPath: /lightrun
+      volumes:
+      - name: init-script
+        emptyDir: {}
