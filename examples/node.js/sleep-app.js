@@ -1,6 +1,5 @@
 // ---------- Import Lightrun Agent ----------
 require('lightrun').start({
-    company: 'COMPANY-NAME',
     lightrunSecret: 'YOUR-LIGHTRUN-KEY',
     metadata: {
         filename: './agent.metadata.json'
