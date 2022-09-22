@@ -1,0 +1,37 @@
+server {
+  listen 443 ssl;
+  listen [::]:443;
+  server_name localhost;
+  ssl_certificate          /etc/nginx/conf.d/certs/tls.crt;
+  ssl_certificate_key      /etc/nginx/conf.d/certs/tls.key;
+  ssl_prefer_server_ciphers on;
+
+  location / {
+    proxy_set_header        Host $host;
+    proxy_set_header        X-Real-IP $remote_addr;
+    proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header        X-Forwarded-Proto $scheme;
+    proxy_pass ${LIGHTRUN_SERVER};
+  }
+
+  location /socket {
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+    # WebSocket support
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection "upgrade";
+    proxy_pass ${LIGHTRUN_SERVER};
+
+    proxy_buffer_size          128k;
+    proxy_buffers              4 256k;
+    proxy_busy_buffers_size    256k;
+  }
+
+  error_page 500 502 503 504 /50x.html;
+  location = /50x.html {
+    root /usr/share/nginx/html;
+  }
+}
