@@ -40,7 +40,7 @@ The source code has the following file structure:
 #### Step 1: Configure Domain Certificates
 Generate a certificate and a private key for your domain, and copy the domain certificate into a `tls.crt` file and the private key into a `tls.key` file. Then place the `tls.crt` and `tls.key` files into the `conf/certs` folder.
 
-#### Step 2: Configure Domain Certificates
+#### Step 2: Build custom docker image based on RHEL
 Build docker image from docker folder and upload to your docker registry
 
 #### Step 3: Configure the Docker Compose file.
