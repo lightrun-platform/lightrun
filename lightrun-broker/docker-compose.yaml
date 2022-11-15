@@ -1,14 +1,16 @@
 version: "3.9"    
 services:
   nginx:
-    build: docker/.
+    image: #Set your image here builded from docker folder
+    environment:
+      LIGHTRUN_SERVER: app.lightrun.com #Set endpoint of your lightrun server
     volumes:
       - type: bind
         source: ./conf/certs/
         target: /etc/nginx/conf.d/certs/
       - type: bind
-        source: ./conf/nginx.conf
-        target: /etc/nginx/nginx.conf
+        source: ./conf/nginx.conf.template
+        target: /etc/nginx/nginx.conf.template
     ports:
       - "443:443"
     restart: always

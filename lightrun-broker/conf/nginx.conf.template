@@ -8,7 +8,7 @@ http {
 
     upstream lightrun {
         zone lightrun 64k;
-        server app.lightrun.com:443 max_fails=0;  # Set hostname of your server
+        server ${LIGHTRUN_SERVER}:443 max_fails=0;  # Set hostname of your server
         keepalive 2;
     }
 
