@@ -31,27 +31,31 @@ Clone the the Lightrun broker source code from the following GitHub repository -
 The source code has the following file structure:
 
 - `docker-compose.yaml` - The Lightrun broker docker-compose file.
+- `docker/Dockerfile` - The dockerfile for managing custom nginx image based on RHEL
 - `conf/certs` - Folder containing domain certificates.
-- `conf/templates` - Folder containing the broker configuration files.
+- `conf/nginx.conf.template` - Template for nginx configuration file.
 
 ### Configuration steps
 
 #### Step 1: Configure Domain Certificates
 Generate a certificate and a private key for your domain, and copy the domain certificate into a `tls.crt` file and the private key into a `tls.key` file. Then place the `tls.crt` and `tls.key` files into the `conf/certs` folder.
 
-#### Step 2: Configure the Docker Compose file.
-Open the `docker-compose.yaml` file in your preferred code editor, and change the ` LIGHTRUN_SERVER` parameter to your organization’s Lightrun server URL. Also, you can change the `dns` parameter to your organization’s public DNS IP address or leave the default Google Public DNS IP address.
+#### Step 2: Configure Domain Certificates
+Build docker image from docker folder and upload to your docker registry
 
-> Note: *The `LIGHTRUN_SERVER` parameter should be in a `https://example.com` format.*
+#### Step 3: Configure the Docker Compose file.
+Open the `docker-compose.yaml` file in your preferred code editor, and change the ` LIGHTRUN_SERVER` parameter to your organization’s Lightrun server URL. Add image tag you built on previous step. Also, you can change the `dns` parameter to your organization’s public DNS IP address or leave the default Google Public DNS IP address.
 
-#### Step 3: Start the Lightrun Broker
+> Note: *The `LIGHTRUN_SERVER` parameter should be in a `example.com` format.*
+
+#### Step 4: Start the Lightrun Broker
 Start the Lightrun broker image with the following command. 
 
 ```
 docker-compose up -d
 ```
 
-#### Step 4: Confirm your connection
+#### Step 5: Confirm your connection
 Enter your Lightrun Server URL value into your browser. The connection should pass through the Lightrun Broker before going to the Lightrun server. 
 
 > Important: *Be sure that within your network **lightrun server** is resolved to IP of Lightrun broker.*
