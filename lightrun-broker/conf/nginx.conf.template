@@ -3,7 +3,6 @@ events {
 }
 
 http {
-    include /etc/nginx/conf.d/*.conf;
 
 
     upstream lightrun {
