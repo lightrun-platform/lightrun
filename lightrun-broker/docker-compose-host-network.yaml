@@ -1,0 +1,26 @@
+version: "3.9"    
+services:
+  nginx:
+    network_mode: "host"
+    # For binding port 443 on host network, there is 2 option
+    # either
+    # user: root
+    # or change conf/nginx.conf.template to listen on port 8443 and add 2 iptables rules which redirect 443 to 8433
+    # iptables -t nat -A PREROUTING -p tcp --dport 443 -j REDIRECT --to-port 8443
+    # iptables -t nat --line-numbers -n -L 
+    image: lightruncom/lightrun-broker-rhel:01 #Set your image here builded from docker folder
+    environment:
+      LIGHTRUN_SERVER:  #Set endpoint of your lightrun server
+    volumes:
+      - type: bind
+        source: ./conf/certs/
+        target: /etc/nginx/conf.d/certs/
+      - type: bind
+        source: ./conf/nginx.conf.template
+        target: /etc/nginx/nginx.conf.template
+    restart: always
+    dns:
+      - 8.8.8.8 # Set here your public DNS for resolving original Lightrun endpoint
+    
+
+  
