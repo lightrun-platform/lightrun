@@ -1,9 +1,9 @@
 version: "3.9"    
 services:
   nginx:
-    image: #Set your image here builded from docker folder
+    image: lightruncom/lightrun-broker-rhel:01 #Set your image here builded from docker folder
     environment:
-      LIGHTRUN_SERVER: app.lightrun.com #Set endpoint of your lightrun server
+      LIGHTRUN_SERVER:  #Set endpoint of your lightrun server
     volumes:
       - type: bind
         source: ./conf/certs/
