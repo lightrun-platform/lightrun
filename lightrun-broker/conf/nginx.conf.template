@@ -41,6 +41,7 @@ http {
         proxy_cookie_path                       off;
 
         proxy_pass https://lightrun;
+        proxy_ssl_verify              off;
 
         proxy_set_header        Host ${LIGHTRUN_SERVER};
         proxy_set_header        X-Real-IP $remote_addr;
@@ -59,6 +60,7 @@ http {
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection "upgrade";
         proxy_pass https://lightrun;
+        proxy_ssl_verify              off;
 
         proxy_buffer_size          128k;
         proxy_buffers              4 256k;
