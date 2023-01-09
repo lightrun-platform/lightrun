@@ -42,7 +42,7 @@ Generate a certificate and a private key for your domain, and copy the domain ce
 #### Step 2: Configure the Docker Compose file.
 Open the `docker-compose.yaml` file in your preferred code editor, and change the ` LIGHTRUN_SERVER` parameter to your organization’s Lightrun server URL. Also, you can change the `dns` parameter to your organization’s public DNS IP address or leave the default Google Public DNS IP address.
 
-> Note: *The `LIGHTRUN_SERVER` parameter should be in a `https://example.com` format.*
+> Note: *The `LIGHTRUN_SERVER` parameter should be in a `example.com` format.*
 
 #### Step 3: Start the Lightrun Broker
 Start the Lightrun broker image with the following command. 
