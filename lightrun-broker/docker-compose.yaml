@@ -3,7 +3,7 @@ services:
   nginx:
     image: nginx:1.23.1
     environment:
-      LIGHTRUN_SERVER: https://app.lightrun.com # Set endpoint of your lightrun server
+      LIGHTRUN_SERVER: app.lightrun.com # Set endpoint of your lightrun server
     volumes:
       - type: bind
         source: ./conf/certs/
