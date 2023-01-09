@@ -1,7 +1,7 @@
 version: "3.9"    
 services:
   nginx:
-    image: nginx:1.23.1
+    image: nginxinc/nginx-unprivileged:1.23-alpine-perl
     environment:
       LIGHTRUN_SERVER: app.lightrun.com # Set endpoint of your lightrun server
     volumes:
