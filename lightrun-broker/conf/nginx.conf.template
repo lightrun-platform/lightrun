@@ -1,0 +1,25 @@
+user www-data;
+worker_processes auto;
+worker_rlimit_nofile 8192;
+pid /run/nginx.pid;
+error_log /dev/stdout info;
+
+
+events {
+        worker_connections 4096;
+}
+
+stream {
+    log_format basic '$remote_addr [$time_local] '
+                 '$protocol $status $bytes_sent $bytes_received '
+                 '$session_time';
+    upstream lightrun {
+        server ${LIGHTRUN_SERVER}:443;
+    }
+
+    server {
+        access_log /dev/stdout basic;
+        listen 443;
+        proxy_pass lightrun;
+    }
+}
