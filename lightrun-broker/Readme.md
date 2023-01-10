@@ -36,19 +36,19 @@ The source code has the following file structure:
 ### Configuration steps
 
 
-#### Step 2: Configure the Docker Compose file.
+#### Step 1: Configure the Docker Compose file.
 Open the `docker-compose.yaml` file in your preferred code editor, and change the ` LIGHTRUN_SERVER` parameter to your organization’s Lightrun server URL. Also, you can change the `dns` parameter to your organization’s public DNS IP address or leave the default Google Public DNS IP address.
 
 > Note: *The `LIGHTRUN_SERVER` parameter should be in a `<tenant>.client.lightrun.com` format.*
 
-#### Step 3: Start the Lightrun Broker
+#### Step 2: Start the Lightrun Broker
 Start the Lightrun broker image with the following command. 
 
 ```
 docker-compose up -d
 ```
 
-#### Step 4: Confirm your connection
+#### Step 3: Confirm your connection
 Enter your Lightrun Server URL value into your browser. The connection should pass through the Lightrun Broker before going to the Lightrun server. 
 
 > Important: *Be sure that within your network **lightrun server** is resolved to IP of Lightrun broker.*
