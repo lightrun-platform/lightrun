@@ -26,7 +26,7 @@ Open a command terminal, change to the directory where your Java file lives, and
 
 An example for a Mac with Apple silicon is:
 
-LIGHTRUN\_KEY=xxxx-xxxxx-xxxx-xxxx zsh -c "$(curl -L "https://app.lightrun.com/public/download/company/xxxx-xxxxx-xxxxx-xxx/install-agent.sh?platform=mac\_m1")"
+LIGHTRUN_KEY=xxxx-xxxxx-xxxx-xxxx zsh -c "$(curl -L "https://app.lightrun.com/public/download/company/xxxx-xxxxx-xxxxx-xxx/install-agent.sh?platform=mac_m1")"
 
 With the X's being replaced by your unique company ID and secret values.
 
@@ -42,7 +42,7 @@ The command for this tutorial is javac -g SortArray.java
 
 When starting the sample program, you will need to specify the location of the Lightrun agent. The full command to run the program is:
 
-java -agentpath:/path/to/agent/lightrun\_agent.so SortArray
+java -agentpath:/path/to/agent/lightrun_agent.so SortArray
 
 Make sure to replace /path/to/agent/ with the proper path to your agent. This must be a relative path.
 
