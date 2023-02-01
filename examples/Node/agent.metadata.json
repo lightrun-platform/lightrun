@@ -1,0 +1,12 @@
+{
+    "registration": {
+        "tags": [
+            {
+                "name": "Production"
+            },
+            {
+                "name": "Main"
+            }
+        ]
+    }
+}
