@@ -19,7 +19,7 @@ def sortArray(arr):
 def main():
     try:
 
-        import lightrun
+        import lightrun # this would generally be together with other imports at the top of the file
         lightrun.enable(
             company_key='xxxxx-xxxxx-xxxxx-xxxxx-xxxxx') 
     except ImportError as e:
