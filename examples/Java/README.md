@@ -44,7 +44,7 @@ When starting the sample program, you will need to specify the location of the L
 
 java -agentpath:/path/to/agent/lightrun_agent.so SortArray
 
-Make sure to replace /path/to/agent/ with the proper path to your agent. This must be a relative path.
+Make sure to replace /path/to/agent/ with the proper path to your agent. This must be an absolute path.
 
 ### Adding Actions
 
