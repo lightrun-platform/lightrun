@@ -37,7 +37,9 @@ You will then need to open the sortArray.py file in your IDE, and replace the X'
 To run the program, simply open a terminal and navigate to the folder which contains the sortArray.py file, and execute one of the following commands (depending on your setup):
 
 python sortArray.py 
+
 -OR- 
+
 python3 sortArray.py
 
 ### Adding Actions
