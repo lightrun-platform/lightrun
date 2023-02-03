@@ -6,7 +6,7 @@ This application fills an array with 10 random numbers, and then uses a bubble s
 
 ### Prerequisites
 
-To get started with this tutorial, you will need Node v10 or higher, and NPM installed in your environment, and will need to ensure you meet the other system requirements listed. You will also need a compatible IDE, currently VSCode, IntelliJ IDEA, or VSCode.dev. For more detailed information, please see this link: [https://docs.lightrun.com/node/system-requirements/](https://docs.lightrun.com/node/system-requirements/)
+To get started with this tutorial, you will need Node v10 or higher, and NPM installed in your environment, and will need to ensure you meet the other system requirements listed. You will also need a compatible IDE, currently IntelliJ IDEA, Webstorm, VSCode, or VSCode.dev. For more detailed information, please see this link: [https://docs.lightrun.com/node/system-requirements/](https://docs.lightrun.com/node/system-requirements/)
 
 You will also need to sign up for an account with Lightrun at [lightrun.com](http://lightrun.com/)
 
