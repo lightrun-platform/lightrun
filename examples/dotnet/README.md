@@ -16,7 +16,7 @@ You will then need to log in with the plugin.
 
 Install the .NET package by running the following command from your IDE terminal
 
-**dotnet add package Lightrun**
+'''dotnet add package Lightrun'''
 
 **Install the Lightrun Agent**
 
@@ -26,11 +26,9 @@ In the Program.cs code sample the relevant code lines are already added, you sho
 
 **Starting the Program**
 
-To run the program, simply open a terminal within your IDE, or command-lineand navigate to the folder which contains the Program.cs file, and execute the app.
+To run the program, simply open a terminal within your IDE, or access the command line however you would normally, navigate to the folder which contains the Program.cs file, and execute the app.
 
 **Adding Actions**
 
-You can now begin adding actions, such as Dynamic Logs (including conditional), and Snapshots (including conditional). 
-Specific instructions on these can be found on https://docs.lightrun.com/ under the Plugins section, and by selecting your specific IDE.
-
-One thing you can try is logging the 'swaps' variable to view the efficiency of the sort algorithm.
+Now that the application is running you can begin adding Lightrun actions such as Dynamic Logs and Snapshots from your IDE.
+By doing so you can observe the run-time state of the application without changing the code!
