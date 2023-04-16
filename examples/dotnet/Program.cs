@@ -26,7 +26,7 @@ namespace HelloWorld
 
             for (int i = 10; i < 1000; i++) {
                 // Console.WriteLine("Checking i " + i);
-                System.Threading.Thread.Sleep(5);
+                System.Threading.Thread.Sleep(500);
                 FibonacciSeries(i);
             }
             watch.Stop();
@@ -38,7 +38,7 @@ namespace HelloWorld
 
         static int FibonacciSeries(int n)  
         {  
-            System.Threading.Thread.Sleep(5);
+            System.Threading.Thread.Sleep(500);
             int firstnumber = 0, secondnumber = 1, result = 0;  
    
             if (n == 0) 
