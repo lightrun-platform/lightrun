@@ -16,7 +16,7 @@ You will then need to log in with the plugin.
 
 Install the .NET package by running the following command from your IDE terminal
 
-'''dotnet add package Lightrun'''
+`dotnet add package Lightrun`
 
 **Install the Lightrun Agent**
 
