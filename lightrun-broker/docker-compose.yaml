@@ -4,6 +4,7 @@ services:
     image: lightruncom/lightrun-broker-rhel:01 #Set your image here builded from docker folder
     environment:
       LIGHTRUN_SERVER:  #Set endpoint of your lightrun server
+      CUSTOMER_ENDPOINT: # If your broker endpoint is different from LIGHTRUN_SERVER
     volumes:
       - type: bind
         source: ./conf/certs/
