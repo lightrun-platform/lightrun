@@ -3,8 +3,10 @@ services:
   nginx:
     image: lightruncom/lightrun-broker-rhel:03 #Set your image here builded from docker folder
     environment:
-      LIGHTRUN_SERVER:  #Set endpoint of your lightrun server
-      CUSTOMER_ENDPOINT: # If your broker endpoint is different from LIGHTRUN_SERVER
+      ## Set endpoint of your lightrun server
+      LIGHTRUN_SERVER:
+      ## If your broker endpoint is different from LIGHTRUN_SERVER
+      CUSTOMER_ENDPOINT:
     volumes:
       - type: bind
         source: ./conf/certs/
