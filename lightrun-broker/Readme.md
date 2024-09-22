@@ -41,14 +41,19 @@ Open the `docker-compose.yaml` file in your preferred code editor, and change th
 
 > Note: *The `LIGHTRUN_SERVER` parameter should be in a `<tenant>.client.lightrun.com` format.*
 
-#### Step 2: Start the Lightrun Broker
+#### Step 2: Add certificate
+Add `tls.crt` and `tls.key` files with an appropriate content to the `/conf/certs`  
+> [!WARNING]  
+> _Don't forget to delete `tls.crt_placeholder` and `tls.key_placeholder` files_
+
+#### Step 3: Start the Lightrun Broker
 Start the Lightrun broker image with the following command. 
 
 ```
 docker-compose up -d
 ```
 
-#### Step 3: Confirm your connection
+#### Step 4: Confirm your connection
 Enter your Lightrun Server URL value into your browser. The connection should pass through the Lightrun Broker before going to the Lightrun server. 
 
 > Important: *Be sure that within your network **lightrun server** is resolved to IP of Lightrun broker.*
