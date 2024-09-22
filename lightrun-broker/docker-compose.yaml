@@ -1,15 +1,20 @@
-version: "3.3"
+version: "3.9"
 services:
   nginx:
-    image: lightruncom/lightrun-broker:latest.layer4
+    image: lightruncom/lightrun-broker:0.1.0.layer7
     ports:
-    - "443:443"
+    - "443:8443"
     environment:
       LIGHTRUN_SERVER: <tenant>.client.lightrun.com
     volumes:
+      - type: bind
+        source: ./conf/certs/
+        target: /etc/nginx/conf.d/certs/
       - type: bind
         source: ./conf/default.template
         target: /tmp/default.template
     restart: always
     dns:
-      - 8.8.8.8 # Set here your public DNS for resolving original Lightrun endpoint
+      - 8.8.8.8
+
+
