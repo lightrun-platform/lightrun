@@ -3,6 +3,7 @@ services:
     image: lightruncom/lightrun-broker:0.1.0.layer7
     ports:
     - "443:8443"
+    user: root # may be requred for permissions to certificates
     environment:
       LIGHTRUN_SERVER: <tenant>.client.lightrun.com
     volumes:
